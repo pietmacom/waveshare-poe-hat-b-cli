@@ -10,10 +10,10 @@ while true; do
     _temperatureViewAwk="BEGIN { printf \"%.2f C\", (${_temperature}/1000) }"
     _temperatureView=$(awk "${_temperatureViewAwk}";)
 
-    if [[ "${_temperature}" > "${_fanOnTemperature}" ]]; then
-	_fanState="on"
-    elif [[ "${_temperature}" < "${_fanOffTemperature}" ]]; then
-	_fanState="off"
+    if [[ "${_temperature}" -gt "${_fanOnTemperature}" ]]; then
+        _fanState="on"
+    elif [[ "${_temperature}" -lt "${_fanOffTemperature}" ]]; then
+        _fanState="off"
     fi
 
     ./waveshare-poe-hat-b-cli fan ${_fanState}
