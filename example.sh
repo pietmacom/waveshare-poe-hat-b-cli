@@ -10,9 +10,9 @@ while true; do
     _temperatureViewAwk="BEGIN { printf \"%.2f C\", (${_temperature}/1000) }"
     _temperatureView=$(awk "${_temperatureViewAwk}";)
 
-    if (( "${_temperature}" > "${_fanOnTemperature}" )); then
+    if [[ "${_temperature}" > "${_fanOnTemperature}" ]]; then
 	_fanState="on"
-    elif (( "${_temperature}" < "${_fanOffTemperature}" )); then
+    elif [[ "${_temperature}" < "${_fanOffTemperature}" ]]; then
 	_fanState="off"
     fi
 
