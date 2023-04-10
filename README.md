@@ -1,4 +1,4 @@
-# Waveshare PoE HAT CLI
+# Waveshare PoE HAT CLI (Command Line Interface)
 Small command line interface for Waveshare PoE HAT B with OLED Display. 
 
 Do whatever you like in shell (no need to recompile).
@@ -71,6 +71,39 @@ row 4: row4
 ![](doc/example-4rows.png)
 
 </div>
+
+### Control Fan In A Script
+
+```bash
+#!/bin/sh -e
+
+_fanState="off"
+_fanOnTemperature="40000"
+_fanOffTemperature="35000"
+
+while true; do
+    _temperature="$(cat /sys/class/thermal/thermal_zone0/temp)"
+
+    _temperatureViewAwk="BEGIN { printf \"%.2f C\", (${_temperature}/1000) }"
+    _temperatureView=$(awk "${_temperatureViewAwk}";)
+
+    if (( "${_temperature}" >= "${_fanOnTemperature}" )); then
+        _fanState="on"
+    elif (( "${_temperature}" <= "${_fanOfffTemperature}" )); then
+        _fanState="off"
+    fi
+
+    ./waveshare-poe-hat-b-cli fan ${_fanState}
+    ./waveshare-poe-hat-b-cli oled "T: ${_temperatureView}" "F: ${_fanState}"
+    sleep 3
+done
+````
+<div style="width: 50%; height: 50%">
+
+![](doc/example-bash.png)
+
+</div>
+
 
 ## Enable I2C Interface
 
