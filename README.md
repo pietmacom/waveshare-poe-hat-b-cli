@@ -1,7 +1,7 @@
 # Waveshare PoE HAT CLI
 Small command line interface for Waveshare PoE HAT B with OLED Display
 
-![](doc/PoE-HAT-B-details-5.png)
+!(doc/PoE-HAT-B-details-5.png)
 
 ## Features
 
@@ -10,6 +10,15 @@ Small command line interface for Waveshare PoE HAT B with OLED Display
  - Control FAN
 
 ## Examples
+
+```shell
+foo@bar:~$ sudo ./waveshare-poe-hat-b-cli fan on
+foo@bar:~$ sudo ./waveshare-poe-hat-b-cli fan off
+foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1"
+foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1" "row2"
+foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1" "row2" "row3"
+foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1" "row2" "row3" "row4"
+```
 
 ## Enable I2C Interface
 
@@ -21,7 +30,7 @@ foo@bar:~$ sudo raspi-config
 Interfacing Options -> I2C -> Yes
 ```
 
-![](doc/enable-i2c.png)
+!(doc/enable-i2c.png)
 
 And then reboot the system.
 
