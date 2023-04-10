@@ -6,7 +6,7 @@ Small command line interface for Waveshare PoE HAT B with OLED Display
 ## Features
 
  - Small
- - Control OLED
+ - Control OLED (1 line, 2 lines, 3 lines and 4 lines)
  - Control FAN
 
 ## Examples
