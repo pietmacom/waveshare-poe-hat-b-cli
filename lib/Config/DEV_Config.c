@@ -26,7 +26,6 @@ static int DEV_Equipment_Testing(void)
 	int fd;
 	char value_str[20];
 	fd = open("/etc/issue", O_RDONLY);
-    printf("Current environment: ");
 	while(1) {
 		if (fd < 0) {
 			return -1;
@@ -36,10 +35,8 @@ static int DEV_Equipment_Testing(void)
 				return -1;
 			}
 			if(value_str[i] ==32) {
-				printf("\r\n");
 				break;
 			}
-			printf("%c",value_str[i]);
 		}
 		break;
 	}
@@ -165,7 +162,6 @@ void DEV_SPI_Init()
 {
 #if DEV_SPI
     #ifdef USE_BCM2835_LIB
-        printf("BCM2835 SPI Device\r\n");  
         bcm2835_spi_begin();                                         //Start spi interface, set spi pin for the reuse function
         bcm2835_spi_setBitOrder(BCM2835_SPI_BIT_ORDER_MSBFIRST);     //High first transmission
         bcm2835_spi_setDataMode(BCM2835_SPI_MODE0);                  //spi mode 0
@@ -174,12 +170,10 @@ void DEV_SPI_Init()
         bcm2835_spi_setChipSelectPolarity(BCM2835_SPI_CS0, LOW);     //enable cs0
         
     #elif USE_WIRINGPI_LIB
-        printf("WIRINGPI SPI Device\r\n");       
         //wiringPiSPISetup(0,9000000);
         wiringPiSPISetupMode(0, 9000000, 0);
         
     #elif USE_DEV_LIB
-        printf("DEV SPI Device\r\n"); 
         DEV_HARDWARE_SPI_begin("/dev/spidev0.0");
     #endif
 #endif
@@ -225,16 +219,13 @@ void DEV_I2C_Init(uint8_t Add)
 {
 #if DEV_I2C
     #ifdef USE_BCM2835_LIB
-        printf("BCM2835 I2C Device\r\n");  
         bcm2835_i2c_begin();
         bcm2835_i2c_setSlaveAddress(Add);
         
     #elif USE_WIRINGPI_LIB
-        printf("WIRINGPI I2C Device\r\n");       
         fd = wiringPiI2CSetup(Add);
         
     #elif USE_DEV_LIB
-        printf("DEV I2C Device\r\n"); 
         DEV_HARDWARE_I2C_begin("/dev/i2c-1");
         DEV_HARDWARE_I2C_setSlaveAddress(Add);
     #endif
@@ -387,8 +378,6 @@ UBYTE DEV_ModuleInit(void)
         printf("set wiringPi lib success  !!! \r\n");
     }
 
-#elif USE_DEV_LIB
-    printf("USE_DEV_LIB \r\n");
 #endif
     GPIO_Config();
     DEV_I2C_Init(0x3C);
