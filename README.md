@@ -74,6 +74,8 @@ row 4: row4
 
 ### Script
 
+Sample script in '''docker/script.sh'''
+
 ```bash
 #!/bin/sh -e
 
