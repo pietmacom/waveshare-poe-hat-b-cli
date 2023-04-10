@@ -61,7 +61,7 @@ Copy [***simple.sh***](simple.sh), make your changes and mount it into your new 
 foo@bar:~$ docker run --privileged -it -v yourscript.sh:/root/script.sh pietmacom/waveshare-poe-hat-b-cli
 ```
 
-***Docker Comopose***
+***Docker Compose***
 ```yaml
 version: '3'
 
