@@ -1,7 +1,7 @@
 # Waveshare PoE HAT CLI (Command Line Interface)
 Small command line interface for Waveshare PoE HAT B with OLED Display. 
 
-![](doc/PoE-HAT-B-details-5.png)
+![doc/PoE-HAT-B-details-5.png](doc/PoE-HAT-B-details-5.png)
 
 ## Features
 
@@ -30,7 +30,7 @@ row 1: row1
 ```
 <div style="width: 50%; height: 50%">
 
-![](doc/example-1rows.png)
+![doc/example-1rows.png](doc/example-1rows.png)
 
 </div>
 
@@ -41,7 +41,7 @@ row 2: row2
 ```
 <div style="width: 50%; height: 50%">
 
-![](doc/example-2rows.png)
+![doc/example-2rows.png](doc/example-2rows.png)
 
 </div>
 
@@ -53,7 +53,7 @@ row 3: row3
 ```
 <div style="width: 50%; height: 50%">
 
-![](doc/example-3rows.png)
+![doc/example-3rows.png](doc/example-3rows.png)
 
 </div>
 
@@ -66,7 +66,7 @@ row 4: row4
 ```
 <div style="width: 50%; height: 50%">
 
-![](doc/example-4rows.png)
+![doc/example-4rows.png](doc/example-4rows.png)
 
 </div>
 
@@ -100,7 +100,7 @@ done
 ````
 <div style="width: 50%; height: 50%">
 
-![](doc/example-bash.png)
+![doc/example-bash.png](doc/example-bash.png)
 
 </div>
 
@@ -128,7 +128,7 @@ foo@bar:~$ sudo raspi-config
 Interfacing Options -> I2C -> Yes
 ```
 
-![](doc/enable-i2c.png)
+![doc/enable-i2c.png](doc/enable-i2c.png)
 
 And then reboot the system.
 
