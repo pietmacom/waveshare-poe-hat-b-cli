@@ -14,38 +14,63 @@ Do whatever you like in shell (no need to recompile).
 
 ## Examples
 
-Control FAN
+### Control FAN
 
 ```shell
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli fan on
+Fan turned on!
+
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli fan off
+Fan turned off!
 ```
 
-Control OLED
+### Control OLED
 
 ```shell
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1"
+row 1: row1
 ```
+<div style="width: 50%; height: 50%">
 
 ![](doc/example-1rows.png)
 
+</div>
+
 ```shell
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1" "row2"
+row 1: row1
+row 2: row2
 ```
+<div style="width: 50%; height: 50%">
 
 ![](doc/example-2rows.png)
 
+</div>
+
 ```shell
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1" "row2" "row3"
+row 1: row1
+row 2: row2
+row 3: row3
 ```
+<div style="width: 50%; height: 50%">
 
 ![](doc/example-3rows.png)
 
+</div>
+
 ```shell
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1" "row2" "row3" "row4"
+row 1: row1
+row 2: row2
+row 3: row3
+row 4: row4
 ```
+<div style="width: 50%; height: 50%">
 
 ![](doc/example-4rows.png)
+
+</div>
 
 ## Enable I2C Interface
 
