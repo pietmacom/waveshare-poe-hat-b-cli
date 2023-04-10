@@ -1,7 +1,7 @@
 # Waveshare PoE HAT CLI
 Small command line interface for Waveshare PoE HAT B with OLED Display
 
-
+![](doc/PoE-HAT-B-details-5.png)
 
 ## Features
 
