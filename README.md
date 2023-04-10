@@ -15,10 +15,13 @@ Do whatever you like in shell (no need to recompile).
 ## Examples
 
 Control FAN
+
 ```shell
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli fan on
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli fan off
 ```
+
+Control OLED
 
 ```shell
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1"
