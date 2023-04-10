@@ -74,7 +74,7 @@ row 4: row4
 
 ### Script
 
-Simple script [***docker/script.sh***](docker/script.sh)
+Simple script [***example.sh***](example.sh)
 
 ```bash
 #!/bin/sh -e
@@ -108,7 +108,17 @@ done
 
 ### Run In Docker
 
+Run example script.
 
+```shell
+foo@bar:~$ docker run --privileged -it pietmacom/waveshare-poe-hat-b-cli
+```
+
+Copy (***example.sh***)[example.sh], make your changes and run your new script.
+
+```shell
+foo@bar:~$ docker run --privileged -it -v yourscript.sh:/root/script.sh pietmacom/waveshare-poe-hat-b-cli
+```
 
 ## Enable I2C Interface
 
