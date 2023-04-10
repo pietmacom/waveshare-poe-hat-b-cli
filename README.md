@@ -7,12 +7,63 @@ Find this project on GitHub [https://github.com/pietmacom/waveshare-poe-hat-b-cl
 
 ## Features
 
- - Do whatever you like in shell (no need to recompile)
-   - Control FAN
-   - Control OLED (1 line, 2 lines, 3 lines and 4 lines)
+ - Docker Image
+ - Command line interface
+   - Turn fan on and off
+   - View up to four lines on your OLED Display (size and positions are adapted automatically)
+ - Binray does not have to be recompiled to view different content
  - Small binary
+ - Almost no dependencies
 
-## Examples
+## Docker
+
+***Run simple script [simple.sh](simple.sh)***
+
+```shell
+foo@bar:~$ docker run --privileged -it pietmacom/waveshare-poe-hat-b-cli
+```
+
+```bash
+#!/bin/sh -e
+
+_fanState="off"
+_fanOnTemperature="40000"
+_fanOffTemperature="34000"
+
+while true; do
+    _temperature="$(cat /sys/class/thermal/thermal_zone0/temp)"
+
+    _temperatureViewAwk="BEGIN { printf \"%.2f C\", (${_temperature}/1000) }"
+    _temperatureView=$(awk "${_temperatureViewAwk}";)
+
+    if [[ "${_temperature}" > "${_fanOnTemperature}" ]]; then
+        _fanState="on"
+    elif [[ "${_temperature}" < "${_fanOffTemperature}" ]]; then
+        _fanState="off"
+    fi
+
+    ./waveshare-poe-hat-b-cli fan ${_fanState}
+    ./waveshare-poe-hat-b-cli oled "T: ${_temperatureView}" "F: ${_fanState}"
+    sleep 3
+done
+````
+<div style="width: 50%; height: 50%">
+
+![doc/example-bash.png](doc/example-bash.png)
+
+</div>
+
+***Run your own script***
+
+Copy [***simple.sh***](simple.sh), make your changes and mount it into your new container.
+
+```shell
+foo@bar:~$ docker run --privileged -it -v yourscript.sh:/root/script.sh pietmacom/waveshare-poe-hat-b-cli
+```
+
+***Docker Comopose***
+
+## Command Line (Shell)
 
 ### Control FAN
 
@@ -71,54 +122,6 @@ row 4: row4
 ![doc/example-4rows.png](doc/example-4rows.png)
 
 </div>
-
-### Script
-
-Simple script [***example.sh***](example.sh)
-
-```bash
-#!/bin/sh -e
-
-_fanState="off"
-_fanOnTemperature="40000"
-_fanOffTemperature="34000"
-
-while true; do
-    _temperature="$(cat /sys/class/thermal/thermal_zone0/temp)"
-
-    _temperatureViewAwk="BEGIN { printf \"%.2f C\", (${_temperature}/1000) }"
-    _temperatureView=$(awk "${_temperatureViewAwk}";)
-
-    if (( "${_temperature}" > "${_fanOnTemperature}" )); then
-        _fanState="on"
-    elif (( "${_temperature}" < "${_fanOffTemperature}" )); then
-        _fanState="off"
-    fi
-
-    ./waveshare-poe-hat-b-cli fan ${_fanState}
-    ./waveshare-poe-hat-b-cli oled "T: ${_temperatureView}" "F: ${_fanState}"
-    sleep 3
-done
-````
-<div style="width: 50%; height: 50%">
-
-![doc/example-bash.png](doc/example-bash.png)
-
-</div>
-
-### Run In Docker
-
-Run example script.
-
-```shell
-foo@bar:~$ docker run --privileged -it pietmacom/waveshare-poe-hat-b-cli
-```
-
-Copy (***example.sh***)[example.sh], make your changes and run your new script.
-
-```shell
-foo@bar:~$ docker run --privileged -it -v yourscript.sh:/root/script.sh pietmacom/waveshare-poe-hat-b-cli
-```
 
 ## Enable I2C Interface
 
