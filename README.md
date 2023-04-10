@@ -1,24 +1,48 @@
 # Waveshare PoE HAT CLI
-Small command line interface for Waveshare PoE HAT B with OLED Display
+Small command line interface for Waveshare PoE HAT B with OLED Display. 
+
+Do whatever you like in shell (no need to recompile).
 
 ![](doc/PoE-HAT-B-details-5.png)
 
 ## Features
 
- - Small
- - Control OLED (1 line, 2 lines, 3 lines and 4 lines)
- - Control FAN
+ - Do whatever you like in shell (no need to recompile)
+   - Control FAN
+   - Control OLED (1 line, 2 lines, 3 lines and 4 lines)
+ - Small binary
 
 ## Examples
 
+Control FAN
 ```shell
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli fan on
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli fan off
+```
+
+```shell
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1"
+```
+
+![](doc/example-1rows.png)
+
+```shell
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1" "row2"
+```
+
+![](doc/example-2rows.png)
+
+```shell
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1" "row2" "row3"
+```
+
+![](doc/example-3rows.png)
+
+```shell
 foo@bar:~$ sudo ./waveshare-poe-hat-b-cli oled "row1" "row2" "row3" "row4"
 ```
+
+![](doc/example-4rows.png)
 
 ## Enable I2C Interface
 
