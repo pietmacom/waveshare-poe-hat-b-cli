@@ -62,7 +62,15 @@ foo@bar:~$ docker run --privileged -it -v yourscript.sh:/root/script.sh pietmaco
 ```
 
 ***Docker Comopose***
+```yaml
+version: '3'
 
+services:
+  waveshare-poe-hat-b-cli:
+    image: pietmacom/waveshare-poe-hat-b-cli:latest
+    privileged: true
+    restart: "unless-stopped"
+```
 ## Command Line (Shell)
 
 ### Control FAN
