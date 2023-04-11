@@ -154,7 +154,6 @@ foo@bar:~$ sudo reboot
 ## Compile
 
 ```shell
-foo@bar:~$ cd src
 foo@bar:~$ ./make clean
 foo@bar:~$ ./make
 ```
