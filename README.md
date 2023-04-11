@@ -4,6 +4,7 @@ Small command line interface for Waveshare PoE HAT B with OLED Display.
 ![doc/PoE-HAT-B-details-5.png](doc/PoE-HAT-B-details-5.png)
 
 Find this project on GitHub [https://github.com/pietmacom/waveshare-poe-hat-b-cli](https://github.com/pietmacom/waveshare-poe-hat-b-cli)
+Find this projekt on DockerHub [https://hub.docker.com/r/pietmacom/waveshare-poe-hat-b-cli](https://hub.docker.com/r/pietmacom/waveshare-poe-hat-b-cli)
 
 ## Features
 
