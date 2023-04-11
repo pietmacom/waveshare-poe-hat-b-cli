@@ -1,5 +1,5 @@
-![Docker Image Build](https://github.com/github/docs/actions/workflows/docker-image.yml/badge.svg?branch=master)
-[![Docker Image Size](https://badgen.net/docker/size/pietmacom/waveshare-poe-hat-b-cli?icon=docker&label=image%20size)](https://hub.docker.com/r/pietmacom/waveshare-poe-hat-b-cli)
+![Docker Image Build](https://github.com/pietmacom/waveshare-poe-hat-b-cli/actions/workflows/docker-image.yml/badge.svg?branch=master)
+[![Docker Image Size](https://badgen.net/docker/size/pietmacom/waveshare-poe-hat-b-cli?icon=docker&label=Docker%20Image%20Size)](https://hub.docker.com/r/pietmacom/waveshare-poe-hat-b-cli)
 
 # Waveshare PoE HAT CLI (Command Line Interface)
 Small command line interface for Waveshare PoE HAT B with OLED Display. 
