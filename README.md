@@ -14,8 +14,7 @@ Find this project on GitHub [https://github.com/pietmacom/waveshare-poe-hat-b-cl
  - Command line interface
    - Turn fan on and off
    - View up to four lines on your OLED Display (size and positions are adapted automatically)
- - Binray does not have to be recompiled to view different content
- - Small binary
+ - Binary does not have to be recompiled to view different content
  - Almost no dependencies
 
 ## Docker
