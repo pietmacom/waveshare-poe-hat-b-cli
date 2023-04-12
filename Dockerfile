@@ -11,6 +11,6 @@ WORKDIR /root
 COPY --from=builder /build/waveshare-poe-hat-b-cli /root/
 ADD example.sh /root/script.sh
 RUN chmod +x /root/script.sh
-ENTRYPOINT [ "/root/script.sh" ]
+CMD /root/script.sh
 
 
