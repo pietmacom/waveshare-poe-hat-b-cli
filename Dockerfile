@@ -9,7 +9,7 @@ RUN cd /build && \
 FROM alpine:latest
 WORKDIR /root
 COPY --from=builder /build/waveshare-poe-hat-b-cli /root/
-ADD example.sh /root/script.sh
+ADD simple.sh /root/script.sh
 RUN chmod +x /root/script.sh
 CMD /root/script.sh
 
