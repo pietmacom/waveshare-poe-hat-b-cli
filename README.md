@@ -19,6 +19,13 @@ Find this project on GitHub [https://github.com/pietmacom/waveshare-poe-hat-b-cl
 
 ## Docker
 
+***Run command***
+
+```shell
+foo@bar:~$ docker run --privileged -it pietmacom/waveshare-poe-hat-b-cli /root/waveshare-poe-hat-b-cli oled "Hello World!"
+foo@bar:~$ docker run --privileged -it pietmacom/waveshare-poe-hat-b-cli /root/waveshare-poe-hat-b-cli fan on
+```
+
 ***Run simple script [simple.sh](simple.sh)***
 
 ```shell
