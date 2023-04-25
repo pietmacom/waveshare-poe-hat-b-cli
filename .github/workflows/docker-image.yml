@@ -38,4 +38,4 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         repository: pietmacom/waveshare-poe-hat-b-cli
-        readme-filepath: true
+        enable-url-completion: true
